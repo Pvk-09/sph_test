@@ -56,4 +56,8 @@ jobs:
       PathtoPublish: $(build.artifactstagingdirectory)
       ArtifactName: $(BuildParameters.ArtifactName)
       TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
+      - task: PublishBuildArtifacts@1
+  inputs:
+    artifactName: 'war'
+    pathToPublish: '$(build.artifactStagingDirectory)'
 ...
